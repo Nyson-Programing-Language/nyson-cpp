@@ -3,6 +3,9 @@
 stack<string> args;
 
 stack<string> get_args(int argc, char** argv) {
-  args.push("billy");
+  ostringstream stream;
+  for (int i = 1; i < argc; ++i) {
+    args.push(argv[i]);
+  }
   return args;
 }
