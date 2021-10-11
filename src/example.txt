@@ -1,1 +1,3 @@
-log("hello world");log("hello world");
+log("hello world");
+log("hello world");
+log("hello world again");

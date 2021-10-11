@@ -10,11 +10,11 @@ stack<string> lexer_return(string contents) {
         if (contents.at(i) == '\"' || contents.at(i) == '\'' || contents.at(i) == '`') {
             ++quotes;
         }
-        if (contents.at(i) == '('  || contents.at(i) == '\"'  || contents.at(i) == ';' || contents.at(i) == ')' || contents.at(i) == '\'' || contents.at(i) == '`' || contents.at(i) == '\\' || (quotes%2 == 0 && contents.at(i) == ' ')){
+        if (contents.at(i) == '('  || contents.at(i) == '\"'  || contents.at(i) == ';' || contents.at(i) == ')' || contents.at(i) == '\'' || contents.at(i) == '`' || contents.at(i) == '\\' || (quotes%2 == 0 && (contents.at(i) == ' ' || contents.at(i) == '\n' || contents.at(i) == '\t' || contents.at(i) == '\r' || contents.at(i) == '\f' || contents.at(i) == '\v'))){
             if (temp != "") {
                 lexed_conts.push(temp);
             }
-            if (string(1, contents.at(i)) != " ") {
+            if (string(1, contents.at(i)) != " " && string(1, contents.at(i)) != "\n" && string(1, contents.at(i)) != "\t" && string(1, contents.at(i)) != "\r" && string(1, contents.at(i)) != "\f" && string(1, contents.at(i)) != "\v") {
                 lexed_conts.push(string(1, contents.at(i)));
             }
             temp="";
