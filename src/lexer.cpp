@@ -14,8 +14,8 @@ stack<string> lexer_return(string contents) {
             if (temp != "") {
                 lexed_conts.push(temp);
             }
-            if (std::string(1, contents.at(i)) != " ") {
-                lexed_conts.push(std::string(1, contents.at(i)));
+            if (string(1, contents.at(i)) != " ") {
+                lexed_conts.push(string(1, contents.at(i)));
             }
             temp="";
         }
