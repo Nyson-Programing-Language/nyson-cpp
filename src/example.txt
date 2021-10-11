@@ -1,2 +1,1 @@
-dfilhdsf;aihsdffo; 
-ihasdf uhasdo;uhduhasdfo;uh
+log("hello world");log("hello world");
