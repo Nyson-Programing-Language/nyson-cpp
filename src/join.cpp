@@ -3,7 +3,12 @@
 string join(stack<string> array, string join) {
   string ret;
   while (!array.empty()) {
-    ret = ret + join + array.top();
+    if (ret == "") {
+      ret = array.top();
+    }
+    else {
+      ret = ret + join + array.top();
+    }
     array.pop();
   }
   return ret;
