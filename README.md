@@ -1,4 +1,4 @@
-# Nyson Programming Language (Built off CPP)
+# Nyson Programming Language (Built off C++)
 The official home of the Nyson Programming Language, built off C++.
 (created by Nyelsonon and AMTitan, 2021)
 
