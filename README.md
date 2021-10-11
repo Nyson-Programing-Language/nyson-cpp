@@ -1,2 +1,7 @@
-# nyson-cpp
-Nyson but coded in cpp and this might be the version we always use
+# Nyson Programming Language (Built off CPP)
+The official home of the Nyson Programming Language, built off C++.
+(created by Nyelsonon and AMTitan, 2021)
+
+![Logo](https://github.com/Nyelsonon/nyson-programming-language/blob/main/Logos/NysonLogo.png)
+
+
