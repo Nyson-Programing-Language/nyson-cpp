@@ -1,0 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=utf8">
+<title>Flawfinder Results</title>
+<meta name="author" content="David A. Wheeler">
+<meta name="keywords" lang="en" content="flawfinder results, security scan">
+</head>
+<body>
+<h1>Flawfinder Results</h1>
+Here are the security scan results from
+<a href="https://dwheeler.com/flawfinder">Flawfinder version 2.0.19</a>,
+(C) 2001-2019 <a href="https://dwheeler.com">David A. Wheeler</a>.
+Number of rules (primarily dangerous function names) in C/C++ ruleset: 222
+<p>
+Examining ./src/lexer.cpp <br>
+Examining ./src/main.cpp <br>
+Examining ./src/readfile.cpp <br>
+Examining ./src/length.cpp <br>
+Examining ./src/trim.cpp <br>
+Examining ./src/readfile.h <br>
+Examining ./src/run.cpp <br>
+Examining ./src/length.h <br>
+Examining ./src/run.h <br>
+Examining ./src/join.cpp <br>
+Examining ./src/orientate.cpp <br>
+Examining ./src/orientate.h <br>
+Examining ./src/lexer.h <br>
+Examining ./src/to_array.cpp <br>
+Examining ./src/join.h <br>
+Examining ./src/trim.h <br>
+Examining ./src/args.h <br>
+Examining ./src/to_array.h <br>
+Examining ./src/args.cpp <br>
+
+<h2>Final Results</h2>
+<ul>
+<li>./src/readfile.cpp:5:34: <b>  [2] </b> (misc) <i> open:Check when opening files - can an attacker redirect it (via symlinks), force the opening of special file type (e.g., device files), move things around to create a race condition, control its ancestors, or change its contents? (<a href="https://cwe.mitre.org/data/definitions/362.html">CWE-362</a>).   </i>
+<pre>
+    std::ifstream myfile; myfile.open(path.c_str());
+</pre>
+</ul>
+<h2>Analysis Summary</h2>
+<p>
+Hits = 1
+<br>
+Lines analyzed = 236 in approximately 0.02 seconds (12423 lines/second)
+<br>
+Physical Source Lines of Code (SLOC) = 193
+<br>
+Hits@level = [0]   0 [1]   0 [2]   1 [3]   0 [4]   0 [5]   0 <br>
+Hits@level+ = [0+]   1 [1+]   1 [2+]   1 [3+]   0 [4+]   0 [5+]   0 <br>
+Hits/KSLOC@level+ = [0+] 5.18135 [1+] 5.18135 [2+] 5.18135 [3+]   0 [4+]   0 [5+]   0 <br>
+Dot directories skipped = 2 (--followdotdir overrides)
+<br>
+Minimum risk level = 1
+<br>
+Not every hit is necessarily a security vulnerability.
+You can inhibit a report by adding a comment in this form:
+// flawfinder: ignore
+Make *sure* it's a false positive!
+You can use the option --neverignore to show these.
+<br>
+There may be other security vulnerabilities; review your code!
+<br>
+See '<a href="https://dwheeler.com/secure-programs">Secure Programming HOWTO</a>'
+(<a href="https://dwheeler.com/secure-programs">https://dwheeler.com/secure-programs</a>) for more information.
+</body>
+</html>
