@@ -10,6 +10,6 @@
 
 using namespace std;
 
-int get_length(stack<string> stacks);
+int get_length(stack<string> array);
 
 #endif

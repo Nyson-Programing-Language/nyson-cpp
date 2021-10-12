@@ -5,7 +5,7 @@ stack<string> lexer_return(string contents) {
     //fixed_contents
     stack<string> lexed_conts;
     string temp;
-    int quotes;
+    int quotes = 0;
     for(int i = 0; i<contents.length(); ++i) {
         if (contents.at(i) == '\"' || contents.at(i) == '\'' || contents.at(i) == '`') {
             ++quotes;
@@ -23,7 +23,7 @@ stack<string> lexer_return(string contents) {
             temp = temp + contents.at(i);
         }
     }
-    if (temp != " " || temp != "") {
+    if (temp != " " || temp != "\n" || temp != "\t" || temp != "\v" || temp != "\r" || temp != "\f") {
         lexed_conts.push(temp);
     }
     return lexed_conts;
