@@ -14,7 +14,7 @@ stack<string> lexer_return(string contents) {
         if (std::find(std::begin(quotes_array), std::end(quotes_array), contents.at(i)) != std::end(quotes_array)) {
             ++quotes;
         }
-        if (std::find(std::begin(splits_array), std::end(splits_array), contents.at(i)) != std::end(splits_array) || (quotes%2 == 0 && (std::find(std::begin(empty_array), std::end(empty_array), contents.at(i)) != std::end(empty_array)))){
+        if ((quotes%2 == 0 && ((std::find(std::begin(empty_array), std::end(empty_array), contents.at(i)) != std::end(empty_array)) || std::find(std::begin(splits_array), std::end(splits_array), contents.at(i)) != std::end(splits_array)))){
             if (temp != "") {
                 lexed_conts.push(temp);
             }
