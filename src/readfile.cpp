@@ -2,7 +2,8 @@
 
 string get_cont(string path) {
     string contents;
-    std::ifstream myfile; myfile.open(path.c_str());
+    std::ifstream myfile;
+    myfile.open(path.c_str());
     if ( myfile.is_open() ) { // always check whether the file is open
         string tp;
       while(getline(myfile, tp)){  //read data from file object and put it into string.
