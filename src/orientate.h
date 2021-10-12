@@ -1,8 +1,6 @@
 #ifndef ORIENTATE_H
 #define ORIENTATE_H
 
-#include <iostream>
-#include <fstream>
 #include <string>
 #include <stack>
 
