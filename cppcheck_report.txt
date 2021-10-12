@@ -1,11 +1,11 @@
-[1msrc/join.cpp:4:27: [31mperformance:[39m Function parameter 'array' should be passed by const reference. [passedByValue][0m
+src/join.cpp:4:27: performance: Function parameter 'array' should be passed by const reference. [passedByValue]
 string join(stack<string> array, string join) {
                           ^
-[1msrc/join.cpp:4:41: [31mperformance:[39m Function parameter 'join' should be passed by const reference. [passedByValue][0m
+src/join.cpp:4:41: performance: Function parameter 'join' should be passed by const reference. [passedByValue]
 string join(stack<string> array, string join) {
                                         ^
-[1msrc/run.cpp:6:24: [31mperformance:[39m Function parameter 'stacks' should be passed by const reference. [passedByValue][0m
+src/run.cpp:6:24: performance: Function parameter 'stacks' should be passed by const reference. [passedByValue]
 void run(stack<string> stacks) {
                        ^
-[1mnofile:0:0: [31minformation:[39m Cppcheck cannot find all the include files (use --check-config for details) [missingIncludeSystem][0m
+nofile:0:0: information: Cppcheck cannot find all the include files (use --check-config for details) [missingIncludeSystem]
 
