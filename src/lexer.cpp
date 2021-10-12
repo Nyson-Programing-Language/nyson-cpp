@@ -2,7 +2,7 @@
 #include "trim.h"
 
 char quotes_array[] = {'\"', '\'', '`'};
-char splits_array[] = {'(', ')', ';', ')', '\\'};
+char splits_array[] = {'(', ')', ';', '\\', '{', '}', '[', ']'};
 char empty_array[] = {' ', '\n', '\t', '\r', '\f', '\v'};
 
 stack<string> lexer_return(string contents) {
