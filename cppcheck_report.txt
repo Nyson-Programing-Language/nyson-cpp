@@ -7,30 +7,6 @@ string join(stack<string> array, string join) {
 src/join.cpp:4:41: performance: Function parameter 'join' should be passed by const reference. [passedByValue]
 string join(stack<string> array, string join) {
                                         ^
-src/length.cpp:3:30: style:inconclusive: Function 'get_length' argument 1 names different: declaration 'stacks' definition 'array'. [funcArgNamesDifferent]
-int get_length(stack<string> array) {
-                             ^
-src/length.h:13:30: note: Function 'get_length' argument 1 names different: declaration 'stacks' definition 'array'.
-int get_length(stack<string> stacks);
-                             ^
-src/length.cpp:3:30: note: Function 'get_length' argument 1 names different: declaration 'stacks' definition 'array'.
-int get_length(stack<string> array) {
-                             ^
-src/lexer.cpp:26:29: style: Condition 'temp!=""' is always true [knownConditionTrueFalse]
-    if (temp != " " || temp != "") {
-                            ^
-src/lexer.cpp:26:14: note: Assuming that condition 'temp!=" "' is not redundant
-    if (temp != " " || temp != "") {
-             ^
-src/lexer.cpp:26:29: note: Condition 'temp!=""' is always true
-    if (temp != " " || temp != "") {
-                            ^
-src/lexer.cpp:13:194: error: Uninitialized variable: quotes [uninitvar]
-        if (contents.at(i) == '('  || contents.at(i) == '\"'  || contents.at(i) == ';' || contents.at(i) == ')' || contents.at(i) == '\'' || contents.at(i) == '`' || contents.at(i) == '\\' || (quotes%2 == 0 && (contents.at(i) == ' ' || contents.at(i) == '\n' || contents.at(i) == '\t' || contents.at(i) == '\r' || contents.at(i) == '\f' || contents.at(i) == '\v'))){
-                                                                                                                                                                                                 ^
-src/lexer.cpp:8:9: style: Variable 'quotes' is not assigned a value. [unassignedVariable]
-    int quotes;
-        ^
 src/run.cpp:6:24: performance: Function parameter 'stacks' should be passed by const reference. [passedByValue]
 void run(stack<string> stacks) {
                        ^
