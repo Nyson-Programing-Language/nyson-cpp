@@ -1,33 +1,26 @@
-name: ci
+# Workflow syntax:
+# https://help.github.com/en/articles/workflow-syntax-for-github-actions
+name: cpp-linter
 on:
-  pull_request:
   push:
-    branches:
-      - main
-      - master
-
+    paths-ignore: "docs/**"
+  pull_request:
+    paths-ignore: "docs/**"
 jobs:
-  Test:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      fail-fast: false
-      matrix:
-        os:
-          - windows-2019
-          - ubuntu-20.04
-          - macos-10.15
-        compiler:
-          - llvm
-          - gcc
-          # you can specify the version after `-` like `llvm-11`.
+  cpp-linter:
+    runs-on: ubuntu-latest
     steps:
-      - name: Setup Cpp
-        uses: aminya/setup-cpp@v1
+      - uses: actions/checkout@v2
+      - uses: shenxianpeng/cpp-linter-action@master
+        id: linter
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          compiler: ${{ matrix.compiler }}
-          cmake: true
-          ninja: true
-          conan: true
-          cppcheck: true
-          ccache: true # instead of `true`, which chooses the default version, you can pass a specific version.
-          # add any tool that you need here...
+          style: file
+
+      - name: Fail fast?!
+        if: steps.linter.outputs.checks-failed > 0
+        run: |
+          echo "Some files failed the linting checks!"
+        # for actual deployment
+        # run: exit 1
