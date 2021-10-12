@@ -5,6 +5,6 @@
 
 using namespace std;
 
-string trim_custom(string str, char* character);
+string trim_custom(string str, const char* character);
 
 #endif
